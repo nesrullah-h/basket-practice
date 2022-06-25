@@ -1,0 +1,28 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form method="post" enctype="multipart/form-data">
+
+        <div>
+            <label asp-for="@Model.ImageFile">Image</label>
+            <input asp-for="@Model.ImageFile" accept="image/*"/>
+            <span asp-validation-for="@Model.ImageFile"></span>
+        </div>
+        <div>
+            <label asp-for="@Model.Title">Title</label>
+            <input asp-for="@Model.Title"/>
+            <span asp-validation-for="@Model.Title"></span>
+        </div>
+        <div>
+            <label asp-for="@Model.Description">Description</label>
+            <input asp-for="@Model.Description"/>
+            <span asp-validation-for="@Model.Description"></span>
+        </div>
+        <button type="submit" class="btn btn-success mt-4">Create</button>
+    </form>
+
+
+</div>

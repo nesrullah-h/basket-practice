@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BasketProduct>
+@{
+    ViewData["Title"] = "Basket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Count</th>
+                    <th scope="col">Settings</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td scope="col"><img width="200px" src="~/img/@item.ImageUrl"/></td>
+                        <td scope="col">@item.Name</td>
+                        <td scope="col">@item.Price</td>
+                        <td scope="col">@item.Count</td>
+                        <td scope="col">setting</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

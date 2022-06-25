@@ -1,0 +1,10 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/AdminF/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>@Model.Title</h1>
+<p>@Model.Description</p>
+<img src="~/img/@Model.Image"/>
+ <a class="btn btn-dark" asp-controller="Blog" asp-action="Delete">Back</a>

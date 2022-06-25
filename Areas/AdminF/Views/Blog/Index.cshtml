@@ -1,0 +1,51 @@
+﻿@model List<Blog>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container mt-5">
+    <div class="btn btn-primary">
+        <a asp-controller="blog" asp-action="Create">Create</a>
+    </div>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Setting</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Blog item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>
+                    <img src="~/img/@item.Image"/>
+                </td>
+                <td>@item.Title</td>
+                <td>
+                        @if (item.Description.Length > 30)
+                        {
+                            @item.Description.Substring(0,30)
+                        }
+                        else
+                        {
+                            @item.Description
+                        }
+                    </td>
+                <td>
+                    <a asp-controller="blog" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                    <a asp-controller="blog" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+</div>

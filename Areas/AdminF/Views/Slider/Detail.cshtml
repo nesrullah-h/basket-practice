@@ -1,0 +1,8 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/AdminF/Views/Shared/_AdminLayout.cshtml";
+}
+
+<img src="~/img/@Model.ImageUrl" />
+ <a class="btn btn-dark" asp-controller="SLider" asp-action="Index">Back</a>
